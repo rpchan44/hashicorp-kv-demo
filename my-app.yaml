@@ -6,7 +6,7 @@ metadata:
   annotations:
     vault.hashicorp.com/agent-inject: "true"
     vault.hashicorp.com/role: "vault-role"
-    vault.hashicorp.com/agent-inject-secret-clisecret: "secret/clisecret" 
+    vault.hashicorp.com/agent-inject-secret-myuberkey: "secret/myuberkey" 
   labels:
         app: my-app
 spec:
