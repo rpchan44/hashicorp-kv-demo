@@ -5,7 +5,7 @@ metadata:
   namespace: development
   annotations:
     vault.hashicorp.com/agent-inject: "true"
-    vault.hashicorp.com/role: "vault-role"
+    vault.hashicorp.com/role: "read-only-from-vault"
     vault.hashicorp.com/agent-inject-secret-myuberkey: "secret/myuberkey" 
   labels:
         app: my-app

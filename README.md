@@ -64,10 +64,10 @@ vault write auth/kubernetes/config \
   kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
 ```
 
-Create a role(vault-role) that binds the above policy to a Kubernetes service account(vault-serviceaccount) in a specific namespace. This allows the service account to access secrets stored in Vault
+Create a role(vault-role) that binds the above policy to a Kubernetes service account(vault-svc-account) in a specific namespace. This allows the service account to access secrets stored in Vault
 
 ```bash
-vault write auth/kubernetes/role/vault-role \
+vault write auth/kubernetes/role/read-only-from-vault \
    bound_service_account_names=vault-svc-account \
    bound_service_account_namespaces=development \
    policies=read-policy \
