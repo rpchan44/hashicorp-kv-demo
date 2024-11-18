@@ -108,5 +108,6 @@ learn-vault git:(master) kubectl get pods -n development
 NAME                          READY   STATUS    RESTARTS   AGE
 my-app                        2/2     Running   0          55m
 
-Don't get confuse why there is 2/2 pod the vault was sidecar to your my-app pod
+Don't get confuse why there is 2/2 pod the vault was sidecar to your my-app pod when I have time
+i'm going to implement this using initContainer approach without sidecar in the app
 ```
