@@ -1,4 +1,4 @@
-## Hashicorp Vault integration to k8s
+## Hashicorp Vault integration to k8s vault is alternative/comparable to aws secret manager
 
 Create the vault namespace:
 
