@@ -56,6 +56,7 @@ vault auth enable kubernetes
 ```
 
 Configure Vault to communicate with the Kubernetes API server
+Trust me don't change the following lines below, I encounter lot of issues on this!
 
 ```bash
 vault write auth/kubernetes/config \
@@ -64,7 +65,9 @@ vault write auth/kubernetes/config \
   kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
 ```
 
-Create a role(vault-role) that binds the above policy to a Kubernetes service account(vault-svc-account) in a specific namespace. This allows the service account to access secrets stored in Vault
+Create a role(read-only-from-vault) that binds the above policy to a Kubernetes service account(vault-svc-account) in a specific namespace. This allows the service account to access secrets stored in Vault
+
+bound_service_account_namespaces=whatever_ns_your_kick_ass_apps_resides
 
 ```bash
 vault write auth/kubernetes/role/read-only-from-vault \
