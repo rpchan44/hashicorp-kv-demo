@@ -86,7 +86,7 @@ vault write auth/kubernetes/role/read-only-from-vault \
 Create secret using
 
 ```bash
-vault kv put secret/myuberkey token=ultimateavatar
+vault kv put secret/DB-VAULT-DEV host=192.168.99.4 db=development username=demo password=password
 ```
 
 Verify if secret created or not
