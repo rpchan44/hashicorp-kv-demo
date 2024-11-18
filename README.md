@@ -64,6 +64,12 @@ vault write auth/kubernetes/config \
   kubernetes_host="https://${KUBERNETES_PORT_443_TCP_ADDR}:443" \
   kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
 ```
+Just in case you are wondering where this environment variable came from KUBERNETES_PORT_443_TCP_ADDR 
+this was injected by k8s to a pod
+
+```
+printenv 
+```
 
 Create a role(read-only-from-vault) that binds the above policy to a Kubernetes service account(vault-svc-account) in a specific namespace. This allows the service account to access secrets stored in Vault
 
