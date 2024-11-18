@@ -1,4 +1,4 @@
-## Hashicorp-kv-demo
+## Hashicorp Vault integration to k8s
 
 Create the vault namespace:
 
