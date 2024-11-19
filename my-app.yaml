@@ -7,7 +7,7 @@ metadata:
     vault.hashicorp.com/agent-inject: "true"
     vault.hashicorp.com/role: "read-only-from-vault"
     vault.hashicorp.com/agent-inject-secret-DB-VAULT-DEV: "secret/DB-VAULT-DEV"
-    vault.hashicorp.com/agent-inject-env-DB-VAULT-DEV: "secret/DB-VAULT-DEV" 
+    ault.hashicorp.com/agent-inject-env-DB-VAULT-DEV: "secret/DB-VAULT-DEV" 
   labels:
         app: my-app
 spec:

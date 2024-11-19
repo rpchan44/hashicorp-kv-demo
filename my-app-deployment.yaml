@@ -3,25 +3,24 @@ kind: Deployment
 metadata:
   name: my-app
   namespace: development
-  annotations:
-    vault.hashicorp.com/agent-inject: 'true'
-    vault.hashicorp.com/agent-inject-status: 'update'
-    vault.hashicorp.com/role: 'read-only-from-vault'
-    vault.hashicorp.com/agent-inject-secret-dbcred: 'secret/dbcred'
   labels:
     app: my-app
 spec:
-  serviceAccountName:
-  replicas: 1  # Number of replicas, you can change this value based on your needs
+  replicas: 1
   selector:
     matchLabels:
       app: my-app
   template:
     metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: 'true'
+        vault.hashicorp.com/agent-inject-status: 'update'
+        vault.hashicorp.com/role: 'read-only-from-vault'
+        vault.hashicorp.com/agent-inject-secret-dbcred: 'secret/dbcred'
       labels:
         app: my-app
     spec:
-      serviceAccountName: vault-svc-account
+      serviceAccountName: vault-svc-account  # <-- This goes under spec.template.spec
       containers:
       - name: my-app
         image: nginx
