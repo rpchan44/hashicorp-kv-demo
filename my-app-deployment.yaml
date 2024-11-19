@@ -19,10 +19,10 @@ spec:
         vault.hashicorp.com/agent-inject-secret-dbcred: 'secret/dbcred'
         vault.hashicorp.com/agent-inject-template-dbcred: |
           {{- with secret "secret/dbcred" -}}
-          export DB_NAME={{ .Data.data.db }}
-          export DB_HOST={{ .Data.data.host }}
-          export DB_USERNAME={{ .Data.data.username }}
-          export DB_PASSWORD={{ .Data.data.password }}
+          DB_NAME={{ .Data.data.db }}
+          DB_HOST={{ .Data.data.host }}
+          DB_USERNAME={{ .Data.data.username }}
+          DB_PASSWORD={{ .Data.data.password }}
           {{- end }}
       labels:
         app: my-app
