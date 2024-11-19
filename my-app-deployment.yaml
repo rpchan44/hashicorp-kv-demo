@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: development
+  annotations:
+    vault.hashicorp.com/agent-inject: 'true'
+    vault.hashicorp.com/agent-inject-status: 'update'
+    vault.hashicorp.com/role: 'read-only-from-vault'
+    vault.hashicorp.com/agent-inject-secret-dbcred: 'secret/dbcred'
+  labels:
+    app: my-app
+spec:
+  serviceAccountName:
+  replicas: 1  # Number of replicas, you can change this value based on your needs
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      serviceAccountName: vault-svc-account
+      containers:
+      - name: my-app
+        image: nginx
