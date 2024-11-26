@@ -83,9 +83,10 @@ vault write auth/kubernetes/role/read-only-from-vault \
    ttl=1h
 ```
 
-Create secret using
+Create secret and activate secret/kv module
 
 ```bash
+vault secrets enable -path=secret kv
 vault kv put secret/dbcred host=192.168.99.4 db=development username=demo password=password
 ```
 
