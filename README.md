@@ -80,6 +80,7 @@ vault write auth/kubernetes/role/read-only-from-vault \
    bound_service_account_names=vault-svc-account,dev-vault-svc-account,prod-vault-svc-account \
    bound_service_account_namespaces=development,production \
    policies=read-policy \
+   audience=vault \
    ttl=1h
 ```
 
