@@ -16,7 +16,7 @@ Install HashiCorp Vault using Helm:
 
 ```bash
 helm repo add hashicorp https://helm.releases.hashicorp.com
-helm install vault hashicorp/vault --namespace vault
+helm install vault hashicorp/vault --set "server.dev.enabled=true"
 ```
 
 # Unseal vault (Non development mode)
